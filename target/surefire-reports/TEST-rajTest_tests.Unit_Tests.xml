@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="rajTest_tests.Unit_Tests" time="146.535" tests="14" errors="0" skipped="0" failures="14">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jre1.8.0_92\bin"/>
+    <property name="java.vm.version" value="25.92-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\AB83732\Desktop\eclipse\${workspace_loc:\rajTest}"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\AB83732\Desktop\workspace\rajTest"/>
+    <property name="forkCount" value="0"/>
+    <property name="java.runtime.version" value="1.8.0_92-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\Users\AB83732\Desktop\workspace\rajTest"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jre1.8.0_92\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\AB83732\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Users\AB83732\Desktop\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1170245656220470507.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jre1.8.0_92\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_92/bin/server;C:/Program Files/Java/jre1.8.0_92/bin;C:/Program Files/Java/jre1.8.0_92/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\curl;C:\Users\AB83732\;C:\Program Files\Dell\Dell Data Protection\Encryption\;C:\Program Files\Java\jdk1.8.0_92\bin;C:\maven\bin;C:\maven\bin;\GIT;C:\Users\AB83732\AppData\Roaming\npm;C:\Users\AB83732\AppData\Local\Programs\Git\cmd;C:\Users\AB83732\Desktop\eclipse;;."/>
+    <property name="surefire.test.class.path" value="C:\Users\AB83732\Desktop\workspace\rajTest\target\test-classes;C:\Users\AB83732\Desktop\workspace\rajTest\target\classes;C:\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\.m2\repository\commons-io\commons-io\1.3.2\commons-io-1.3.2.jar;C:\.m2\repository\org\json\json\20170516\json-20170516.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\AB83732"/>
+    <property name="user.timezone" value="Asia/Singapore"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="ab83732"/>
+    <property name="java.class.path" value="/C:/Users/AB83732/Desktop/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.6.0.20150526-2031/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jre1.8.0_92"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -DforkCount=0 -B -s C:\maven\conf\settings.xml test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_92"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jre1.8.0_92\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jre1.8.0_92\lib\resources.jar;C:\Program Files\Java\jre1.8.0_92\lib\rt.jar;C:\Program Files\Java\jre1.8.0_92\lib\sunrsasign.jar;C:\Program Files\Java\jre1.8.0_92\lib\jsse.jar;C:\Program Files\Java\jre1.8.0_92\lib\jce.jar;C:\Program Files\Java\jre1.8.0_92\lib\charsets.jar;C:\Program Files\Java\jre1.8.0_92\lib\jfr.jar;C:\Program Files\Java\jre1.8.0_92\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\AB83732\Desktop\workspace\rajTest\EMBEDDED"/>
+    <property name="localRepository" value="C:\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="getBillingSitesTest" classname="rajTest_tests.Unit_Tests" time="4.383">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getBillingSitesTest(Unit_Tests.java:38)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company billing Sites request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/billingSites
+Response Code : 200
+Billing Sites'': 
+
+
+Sending 'GET' Company billing Sites request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/billingSites
+Response Code : 200
+Billing Sites'': 
+
+]]></system-out>
+  </testcase>
+  <testcase name="logintest" classname="rajTest_tests.Unit_Tests" time="0.766">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.logintest(Unit_Tests.java:13)
+</failure>
+    <system-out><![CDATA[
+Sending 'POST' login request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/login
+Response Code : 200
+
+
+Sending 'POST' login request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/login
+Response Code : 200
+
+]]></system-out>
+  </testcase>
+  <testcase name="getDomainTest" classname="rajTest_tests.Unit_Tests" time="1.814">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getDomainTest(Unit_Tests.java:57)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company domains request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/domains
+Response Code : 200
+Domains: 
+
+
+Sending 'GET' Company domains request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/domains
+Response Code : 200
+Domains: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getMachineImagesTest" classname="rajTest_tests.Unit_Tests" time="2.424">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getMachineImagesTest(Unit_Tests.java:51)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company Machines request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/machineImages
+Response Code : 200
+Machines: 
+
+
+Sending 'GET' Company Machines request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/machineImages
+Response Code : 200
+Machines: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getClusterStorageTest" classname="rajTest_tests.Unit_Tests" time="0.897">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getClusterStorageTest(Unit_Tests.java:93)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company cluster storages request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/storages
+Response Code : 200
+Storages: 
+
+
+Sending 'GET' Company cluster storages request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/storages
+Response Code : 200
+Storages: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getCompanyTest" classname="rajTest_tests.Unit_Tests" time="1.185">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getCompanyTest(Unit_Tests.java:19)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies
+Response Code : 200
+Company: 
+
+
+Sending 'GET' Company request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies
+Response Code : 200
+Company: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getCluterCatalogTest" classname="rajTest_tests.Unit_Tests" time="5.816">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getCluterCatalogTest(Unit_Tests.java:75)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=os
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=compute
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=all
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=storage
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=os
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=compute
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=all
+Response Code : 200
+Catalogs: 
+
+
+Sending 'GET' Company cluster catalogs request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/catalogs/?type=storage
+Response Code : 200
+Catalogs: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getClusterMachineImagesTest" classname="rajTest_tests.Unit_Tests" time="0.828">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getClusterMachineImagesTest(Unit_Tests.java:81)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company cluster machines request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/machines
+Response Code : 200
+Machines: 
+
+
+Sending 'GET' Company cluster machines request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/machines
+Response Code : 200
+Machines: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getOrdersTest" classname="rajTest_tests.Unit_Tests" time="122.042">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getOrdersTest(Unit_Tests.java:99)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company orders request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/orders
+Response Code : 200
+Orders: 
+
+
+Sending 'GET' Company orders request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/orders
+Response Code : 200
+Orders: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getClustersTest" classname="rajTest_tests.Unit_Tests" time="2.17">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getClustersTest(Unit_Tests.java:63)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company domains request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters
+Response Code : 200
+Clusters: 
+
+
+Sending 'GET' Company domains request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters
+Response Code : 200
+Clusters: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getDataCentersTest" classname="rajTest_tests.Unit_Tests" time="1.011">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getDataCentersTest(Unit_Tests.java:26)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company Data Centers request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/dataCenters
+Response Code : 200
+Data Centers: 
+
+
+Sending 'GET' Company Data Centers request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/dataCenters
+Response Code : 200
+Data Centers: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getClusterNetworkIntSegTest" classname="rajTest_tests.Unit_Tests" time="1.069">
+    <failure message="expected:&lt;0&gt; but was:&lt;200&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<0> but was:<200>
+	at rajTest_tests.Unit_Tests.getClusterNetworkIntSegTest(Unit_Tests.java:67)
+]]></failure>
+    <system-err><![CDATA[java.net.SocketException: Unexpected end of file from server
+	at sun.net.www.http.HttpClient.parseHTTPHeader(Unknown Source)
+	at sun.net.www.http.HttpClient.parseHTTP(Unknown Source)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(Unknown Source)
+	at sun.net.www.http.HttpClient.parseHTTP(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.HttpURLConnection.getResponseCode(Unknown Source)
+	at rajTest.TestCase.getClusterNetworkIntSeg(TestCase.java:724)
+	at rajTest_tests.Unit_Tests.getClusterNetworkIntSegTest(Unit_Tests.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:365)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:159)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:84)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1060)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:907)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:785)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+]]></system-err>
+  </testcase>
+  <testcase name="getOrderProductsTest" classname="rajTest_tests.Unit_Tests" time="1.097">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getOrderProductsTest(Unit_Tests.java:45)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company order products request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/orders/5784be6a6eaed0783558728c/products
+Response Code : 200
+Order Products: 
+
+
+Sending 'GET' Company order products request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/orders/5784be6a6eaed0783558728c/products
+Response Code : 200
+Order Products: 
+
+]]></system-out>
+  </testcase>
+  <testcase name="getClusterHostsTest" classname="rajTest_tests.Unit_Tests" time="0.813">
+    <failure message="Error code: 200" type="java.lang.AssertionError">java.lang.AssertionError: Error code: 200
+	at rajTest_tests.Unit_Tests.getClusterHostsTest(Unit_Tests.java:87)
+</failure>
+    <system-out><![CDATA[
+Sending 'GET' Company cluster hosts request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/hosts
+Response Code : 200
+Hosts: 
+
+
+Sending 'GET' Company cluster hosts request to URL: http://nj3dccnjsdv02.it.savvis.net:10010/companies/201514/clusters/58b9ae92b95f761040cc1b5f/hosts
+Response Code : 200
+Hosts: 
+
+]]></system-out>
+  </testcase>
+</testsuite>
