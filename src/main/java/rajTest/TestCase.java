@@ -1,113 +1,125 @@
 package rajTest;
 
 import java.net.HttpURLConnection;
+
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*; 
 import org.json.*;
+
 public class TestCase {
 	public final static String swaggerServer = "http://nj3dccnjsdv02.it.savvis.net:10010";
-	public final static String Token = "a7af09b16d5989b33a38f12819f0b73b";
+	public final static String Token = "15065a29e896b01547dc55de92acaa1b";
 	public static ArrayList<Integer> CompanyID;
-	public static ArrayList<Integer> ClusterID;
+	public static ArrayList<String> ClusterID;
 	public static ArrayList<Integer> MachineID;
 	public static ArrayList<Integer> StorageID;
-	public static ArrayList<Integer> OrderID;
+	public static ArrayList<String> OrderID;
 	public static String OsName;
 	public static String OsID;
 	public static ArrayList<Integer> ProductID;
 	@SuppressWarnings("serial")
 	public final static ArrayList<String> Type = new ArrayList<String>(){{
 		
-		add("OS");
-		add("Compute");
-		add("All");
-		add("Storage");
+		add("os");
+		add("compute");
+		add("all");
+		add("storage");
 	}};
 	public static void main(String[] args) {
 		login();
 		getSession();
-		System.out.println("Choose test: \n"
-				+ "1) getCompany \n"
-				+ "2) getStorages \n"
-				+ "3) getDataCenters \n"
-				+ "4) getAvailIPs \n"
-				+ "5) getBillingSites \n"
-				+ "6) getOrders\n"
-				+ "7) getOrderProducts \n"
-				+ "8) getMachineImages \n"
-				+ "9) getDomain \n"
-				+ "10) getClusters \n"
-				+ "11) getClusterNetworkIntSeg \n"
-				+ "12) getCluterCatalog \n"
-				+ "13) getClusterMachineImages \n"
-				+ "14) getClusterHosts \n"
-				+ "15) getClusterStorage \n " );
-		Scanner reader = new Scanner(System.in);
+		System.out.println("Run test: \n" +
+				"1) getCompany \n");				
 		System.out.println("Enter number: ");
+		Scanner reader = new Scanner(System.in);
 		int n = reader.nextInt();
-		if ( n ==1 ){
+		if ( n == 1 ){
+			int v = 0;
 			getCompany();
+			Scanner reader2 = new Scanner(System.in);
+			int n2 = reader2.nextInt();
+			while (v == 0)
+			{
+				System.out.println("Choose Test: \n"
+						+ "2) getStorages \n"
+						+ "3) getDataCenters \n"
+						+ "4) getAvailIPs (Unavailable) \n"
+						+ "5) getBillingSites \n"
+						+ "6) getOrders\n"
+						+ "7) getOrderProducts \n"
+						+ "8) getMachineImages \n"
+						+ "9) getDomain \n"
+						+ "10) getClusters \n"
+						+ "11) getClusterNetworkIntSeg \n"
+						+ "12) getCluterCatalog \n"
+						+ "13) getClusterMachineImages \n"
+						+ "14) getClusterHosts \n"
+						+ "15) getClusterStorage \n " );
+				System.out.println("Enter number: ");			
+				
+				if ( n2 == 2 ){
+					getStorages();
 
-		}
-		else if ( n == 2 ){
-			getStorages();
+				}
+				else if ( n2 == 3 ){
+					getDataCenters();
 
-		}
-		else if ( n == 3 ){
-			getDataCenters();
+				}
+				else if ( n2 == 4 ){
+					/*getAvailIPs();*/
+			
+				}
+				else if ( n2 == 5 ){
+					getBillingSites();
 
-		}
-		else if ( n == 4 ){
-			getAvailIPs();
-	
-		}
-		else if ( n == 5 ){
-			getBillingSites();
+				}
+				else if ( n2 == 6 ){
+					getOrders();
+				}
+				else if ( n2 == 7 ){
+					getOrderProducts();
 
-		}
-		else if ( n == 6 ){
-			getOrders();
-		}
-		else if ( n == 7 ){
-			getOrderProducts();
+				}
+				else if ( n2 == 8 ){
+					getMachineImages();
 
-		}
-		else if ( n == 8 ){
-			getMachineImages();
+				}
+				else if ( n2 == 9 ){
+					getDomain();
 
-		}
-		else if ( n == 9 ){
-			getDomain();
+				}
+				else if ( n2 == 10 ){
+					getClusters();
 
-		}
-		else if ( n == 10 ){
-			getClusters();
+				}
+				else if ( n2 == 11 ){
+					getClusterNetworkIntSeg();
 
-		}
-		else if ( n == 11 ){
-			getClusterNetworkIntSeg();
+				}
+				else if ( n2== 12){
+					getCluterCatalog();
 
-		}
-		else if ( n == 12){
-			getCluterCatalog();
+				}
+				else if ( n2 == 13 ){
+					getClusterMachineImages();
 
-		}
-		else if ( n == 13 ){
-			getClusterMachineImages();
+				}
+				else if ( n2 == 14 ){
+					getClusterHosts();
 
-		}
-		else if ( n == 14 ){
-			getClusterHosts();
+				}
+				else if ( n2 == 15 ){
+					getClusterStorage();
 
-		}
-		else if ( n == 15 ){
-			getClusterStorage();
-
-		}
-		reader.close();
+				}
+				reader2.close();
+			}	
+			reader.close();
+			}
+			
 	}
 	/** public static void getToken() {		
 		try 
@@ -227,9 +239,6 @@ public class TestCase {
 			while ((inputLine = in.readLine()) != null){
 				response.append(inputLine);
 			}
-			System.out.println(response);
-			JSONObject id = new JSONObject(response);
-			System.out.println(id);
 			in.close();
 			
 		}
@@ -243,7 +252,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/storages");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company Storages request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Company Storages: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/storages");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -263,7 +290,7 @@ public class TestCase {
 				}
 				System.out.println(response);
 				in.close();
-			}
+			}**/
 			
 			
 		}
@@ -277,7 +304,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/dataCenters");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company Data Centers request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Data Centers: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/dataCenters");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -297,7 +342,7 @@ public class TestCase {
 				}
 				System.out.println(response);
 				in.close();
-				}
+				}**/
 		}
 		catch(Exception e)
 		{
@@ -307,10 +352,30 @@ public class TestCase {
 	}
 
 	
-	public static int getAvailIPs(){
+	/**public static int getAvailIPs(){
 		int responseCode = 0;
 		try
 		{
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/availableIps/?ipSpace=10.10.10.21%2F27&numberOfIpsNeeded=3");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company Available IPs request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Available IPs': \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			System.out.println(response);
+			in.close();
+			
 			for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/availableIps");
 				URLConnection conn = (URLConnection) obj.openConnection();
@@ -332,18 +397,37 @@ public class TestCase {
 				System.out.println(response);
 				in.close();
 				}
+				
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		return responseCode;
-	}
+	}**/
 	public static int getBillingSites(){
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/billingSites");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company billing Sites request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Billing Sites'': \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/billingSites");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -363,7 +447,8 @@ public class TestCase {
 				}
 				System.out.println(response);
 				in.close();
-				}
+			
+				}**/
 		}
 		catch(Exception e)
 		{
@@ -375,7 +460,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/orders");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company orders request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Orders: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/orders");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -395,7 +498,7 @@ public class TestCase {
 				}
 				System.out.println(response);
 				in.close();
-				}
+				}**/
 		}
 		catch(Exception e)
 		{
@@ -407,7 +510,25 @@ public class TestCase {
 		int responseCode = 0 ; 
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/orders/" + "5784be6a6eaed0783558728c" + "/products" );
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company order products request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Order Products: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}			
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/orders/" + OrderID.get(i) + "/products" );
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -428,6 +549,7 @@ public class TestCase {
 				System.out.println(response);
 				in.close();
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -439,7 +561,26 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/machineImages");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company Machines request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));		
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Machines: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/machineImages");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -460,6 +601,7 @@ public class TestCase {
 				System.out.println(response);
 				in.close();
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -471,7 +613,26 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/domains");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company domains request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));				
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Domains: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/domains");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -492,6 +653,7 @@ public class TestCase {
 				System.out.println(response);
 				in.close();
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -503,7 +665,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters");
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company domains request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Clusters: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters");
 				URLConnection conn = (URLConnection) obj.openConnection();
 				((HttpURLConnection) conn).setRequestMethod("GET");
@@ -524,6 +704,7 @@ public class TestCase {
 				System.out.println(response);
 				in.close();
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -535,7 +716,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters/" + "58b9ae92b95f761040cc1b5f" + "/catalogs/networks /internal/segments"  );
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company cluster segments request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Segments: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				for (int o = 0, len2 = ClusterID.size(); o < len2; i++){
 					URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters/" + ClusterID.get(o) + "/catalogs/networks /internal/segments"  );
 					URLConnection conn = (URLConnection) obj.openConnection();
@@ -558,6 +757,7 @@ public class TestCase {
 					in.close();
 					}				
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -569,7 +769,27 @@ public class TestCase {
 		int responseCode = 0 ;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			for ( int y = 0; y<4; y++){
+				URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters/" + "58b9ae92b95f761040cc1b5f" + "/catalogs/" + "?type=" + Type.get(y)  );
+				URLConnection conn = (URLConnection) obj.openConnection();
+				((HttpURLConnection) conn).setRequestMethod("GET");
+				conn.setRequestProperty("auth-token", Token);
+				
+				responseCode = ((HttpURLConnection) conn).getResponseCode();
+				System.out.println("\nSending 'GET' Company cluster catalogs request to URL: " + obj);
+				System.out.println("Response Code : " + responseCode);
+				
+				BufferedReader in = new BufferedReader(
+						new InputStreamReader(conn.getInputStream()));
+				String inputLine;
+				StringBuffer response = new StringBuffer();
+				System.out.println("Catalogs: \n");
+				while ((inputLine = in.readLine()) != null){
+					response.append(inputLine);
+				}
+				in.close();
+				}
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				for (int o = 0, len2 = ClusterID.size(); o < len2; i++){
 					for ( int y = 0; y<4; y++){
 						URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters/" + ClusterID.get(o) + "/catalogs/" + "?type=" + Type.get(y)  );
@@ -595,6 +815,7 @@ public class TestCase {
 					
 					}				
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -606,7 +827,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters/" + "58b9ae92b95f761040cc1b5f" + "/machines"  );
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company cluster machines request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Machines: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				for (int o = 0, len2 = ClusterID.size(); o < len2; i++){
 					URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters/" + ClusterID.get(o) + "/machines"  );
 					URLConnection conn = (URLConnection) obj.openConnection();
@@ -629,6 +868,7 @@ public class TestCase {
 					in.close();
 					}				
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -640,7 +880,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters/" + "58b9ae92b95f761040cc1b5f" + "/hosts"  );
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company cluster hosts request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Hosts: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				for (int o = 0, len2 = ClusterID.size(); o < len2; i++){
 					URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters/" + ClusterID.get(o) + "/hosts"  );
 					URLConnection conn = (URLConnection) obj.openConnection();
@@ -663,6 +921,7 @@ public class TestCase {
 					in.close();
 					}				
 				}
+				**/
 		}
 		catch(Exception e)
 		{
@@ -674,7 +933,25 @@ public class TestCase {
 		int responseCode = 0;
 		try
 		{
-			for (int i = 0, len = CompanyID.size(); i < len; i++){
+			URL obj = new URL(swaggerServer + "/companies/" + 201514 + "/clusters/" + "58b9ae92b95f761040cc1b5f" + "/storages"  );
+			URLConnection conn = (URLConnection) obj.openConnection();
+			((HttpURLConnection) conn).setRequestMethod("GET");
+			conn.setRequestProperty("auth-token", Token);
+			
+			responseCode = ((HttpURLConnection) conn).getResponseCode();
+			System.out.println("\nSending 'GET' Company cluster storages request to URL: " + obj);
+			System.out.println("Response Code : " + responseCode);
+			
+			BufferedReader in = new BufferedReader(
+					new InputStreamReader(conn.getInputStream()));
+			String inputLine;
+			StringBuffer response = new StringBuffer();
+			System.out.println("Storages: \n");
+			while ((inputLine = in.readLine()) != null){
+				response.append(inputLine);
+			}
+			in.close();
+			/**for (int i = 0, len = CompanyID.size(); i < len; i++){
 				for (int o = 0, len2 = ClusterID.size(); o < len2; i++){
 					URL obj = new URL(swaggerServer + "/companies/" + CompanyID.get(i) + "/clusters/" + ClusterID.get(o) + "/storages"  );
 					URLConnection conn = (URLConnection) obj.openConnection();
@@ -697,6 +974,7 @@ public class TestCase {
 					in.close();
 					}				
 				}
+				**/
 		}
 		catch(Exception e)
 		{
